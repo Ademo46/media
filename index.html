@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your ready files</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      /* Sleek professional: dark navy, teal, silver, cyan accent */
+      --main-bg: #111827;
+      --main-card: #192132ee;
+      --main-card2: #222d3bfa;
+      --main-accent: #06b6d4;
+      --main-accent2: #67e8f9;
+      --main-light: #f9fafb;
+      --main-silver: #d1d5db;
+      --main-dark: #0a0f1a;
+      --main-btn: #06b6d4;
+      --main-btn2: #0891b2;
+      --main-shadow: 0 8px 38px 0 #06b6d422, 0 1.5px 8px #06b6d433, 0 8px 32px #11182744;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--main-accent);
+      text-align: center;
+      padding: 20px;
+      min-height: 100vh;
+      background: #111827 url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
+      background-blend-mode: darken;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top:0;left:0;right:0;bottom:0;
+      background: linear-gradient(120deg, #111827 78%, #06b6d411 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .header {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--main-accent);
+      background: linear-gradient(110deg, #181f2f 60%, #67e8f9 120%);
+      padding: 27px 22px 20px 22px;
+      border-radius: 28px 28px 14px 14px;
+      margin-top: 55px;
+      border: 2.5px solid var(--main-accent);
+      letter-spacing: 0.85px;
+      box-shadow: var(--main-shadow);
+      text-shadow: 0 2px 18px #06b6d488, 0 1px 0 #f9fafb40;
+      font-family: 'Poppins', sans-serif;
+      transform-style: preserve-3d;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(3px);
+    }
+    .header:hover {
+      transform: translateY(-7px) scale(1.045) rotateX(7deg) skewY(-1.5deg);
+      box-shadow: 0 18px 54px 0 #06b6d4cc, 0 1px 0 #fff;
+      transition: 0.4s cubic-bezier(.42,.78,.34,.98);
+    }
+    .countdown {
+      margin-top: 16px;
+      font-size: 19px;
+      font-weight: bold;
+      color: var(--main-accent);
+      animation: countdownBlink 2s infinite;
+      letter-spacing: 1.13px;
+      background: #192132cc;
+      display: inline-block;
+      padding: 9px 26px;
+      border-radius: 32px;
+      border: 1.7px solid var(--main-accent);
+      box-shadow: 0 2px 14px #06b6d422, 0 1px 6px #67e8f944;
+      margin-bottom: 10px;
+      backdrop-filter: blur(2px);
+    }
+    .products-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+      align-items: center;
+      margin-top: 36px;
+      position: relative;
+      z-index: 1;
+    }
+    .container {
+      max-width: 430px;
+      background: linear-gradient(120deg, var(--main-card) 85%, var(--main-card2) 100%);
+      padding: 38px 34px 32px 34px;
+      border-radius: 0 0 28px 28px;
+      box-shadow: 0 22px 62px 0 #06b6d411, 0 5px 16px #67e8f944, 0 2px 9px #06b6d433;
+      border: 2.3px solid var(--main-accent);
+      position: relative;
+      animation: fadeSlideIn 1s cubic-bezier(.42,.78,.34,.98) both;
+      transition: background 0.4s, box-shadow 0.4s, border 0.2s;
+      transform-style: preserve-3d;
+      perspective: 600px;
+      z-index: 2;
+      backdrop-filter: blur(7px);
+    }
+    .container:hover {
+      transform: translateY(-8px) scale(1.035) rotateY(-5deg) skewX(1deg);
+      box-shadow: 0 32px 64px #06b6d444, 0 8px 32px #67e8f944;
+      transition: 0.4s cubic-bezier(.42,.78,.34,.98);
+    }
+    .zip-icon {
+      width: 104px;
+      margin-bottom: 26px;
+      background: linear-gradient(135deg, #f9fafb 60%, #06b6d422 100%);
+      border-radius: 21px;
+      box-shadow: 0 12px 44px #06b6d433, 0 4px 16px #67e8f933, 0 0px 0px #fff;
+      border: 2.5px solid var(--main-accent2);
+      padding: 18px 18px 24px 18px;
+      position: relative;
+      z-index: 5;
+      animation: floatImage 2.5s infinite alternate, zipGlow 2.2s infinite alternate, zoomIn 1s cubic-bezier(.42,.78,.34,.98);
+      transform: rotateY(-13deg) rotateX(8deg) scale(1.1) perspective(700px);
+      transition: box-shadow 0.32s, transform 0.3s;
+      display: block;
+    }
+    .zip-icon:hover {
+      transform: rotateY(8deg) rotateX(-5deg) scale(1.14) perspective(600px);
+      box-shadow: 0 22px 54px 0 #06b6d499, 0 6px 20px #67e8f999;
+    }
+    @keyframes floatImage {
+      0% { transform: rotateY(-13deg) rotateX(8deg) scale(1.1) translateY(0);}
+      100% { transform: rotateY(-13deg) rotateX(8deg) scale(1.12) translateY(-12px);}
+    }
+    @keyframes zipGlow {
+      0% { box-shadow: 0 0 22px #06b6d444; }
+      100% { box-shadow: 0 0 54px #67e8f9cc; }
+    }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(44px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .file-type {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--main-accent2);
+      letter-spacing: 0.44px;
+      text-shadow: 0 1px 8px #06b6d455;
+    }
+    .price-box {
+      background: #1e2632ee;
+      border-radius: 15px;
+      padding: 19px 16px 15px 16px;
+      font-size: 1.10rem;
+      margin-bottom: 20px;
+      text-align: left;
+      box-shadow: 0 2px 16px #06b6d411, 0 2px 8px #67e8f926;
+      border: 1.8px solid #06b6d444;
+      color: var(--main-silver);
+      transform-style: preserve-3d;
+      perspective: 500px;
+    }
+    .price-box strong {
+      float: right;
+      color: var(--main-accent2);
+    }
+    .secure-note {
+      background: #111827;
+      padding: 11px;
+      border-radius: 8px;
+      font-size: 15px;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      color: #67e8f9;
+      letter-spacing: 0.12px;
+      border: 1px solid #06b6d455;
+      box-shadow: 0 1px 7px #06b6d444;
+      transform-style: preserve-3d;
+      perspective: 400px;
+    }
+    .secure-note::before {
+      content: "🔒";
+      margin-right: 10px;
+      margin-left: 0;
+    }
+    .pay-button {
+      background: linear-gradient(90deg, #06b6d4 0%, #67e8f9 80%, #192132 100%);
+      color: #192132;
+      padding: 17px 0;
+      font-size: 1.18rem;
+      border: none;
+      border-radius: 44px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      box-shadow: 0 2px 22px #06b6d422, 0 4px 16px #67e8f922;
+      margin-top: 10px;
+      margin-bottom: 6px;
+      text-shadow: 0 1px 6px #67e8f955;
+      transform-style: preserve-3d;
+      perspective: 400px;
+      transition: 0.18s;
+    }
+    .pay-button:hover {
+      animation: bounceHover 0.45s cubic-bezier(.42,.78,.34,.98);
+      background: linear-gradient(90deg, #192132 10%, #06b6d4 88%);
+      color: #fff;
+      transform: translateY(-3px) scale(1.07) rotateX(5deg) skewY(-2deg);
+      box-shadow: 0 8px 38px #11182777;
+    }
+    .logo-bar img {
+      width: 38px;
+      margin: 0 10px;
+      opacity: 0.99;
+      filter: grayscale(0.12) brightness(1.13);
+      vertical-align: middle;
+      transition: transform 0.2s, filter 0.2s;
+      transform-style: preserve-3d;
+      perspective: 400px;
+    }
+    .logo-bar img:hover {
+      transform: scale(1.13) rotateY(8deg) skewX(2deg);
+      filter: brightness(1.27);
+    }
+    .badge {
+      background: linear-gradient(90deg, #67e8f9 0%, #fff 100%);
+      color: #192132;
+      font-size: 14.5px;
+      padding: 9px 22px;
+      border-radius: 54px;
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      animation: pulse 2s infinite;
+      box-shadow: 0 1px 16px #06b6d433, 0 4px 14px #fff;
+      font-weight: bold;
+      letter-spacing: 0.24px;
+      border: 2px solid #f9fafb;
+      z-index: 2;
+      transform-style: preserve-3d;
+      perspective: 400px;
+    }
+    .telegram-icon {
+      width: 54px;
+      transition: transform 0.22s;
+      transform-style: preserve-3d;
+      perspective: 350px;
+    }
+    .telegram-icon:hover { transform: scale(1.12) rotateY(-10deg);}
+    .legal-box {
+      font-size: 14px;
+      color: #67e8f9;
+      margin-top: 45px;
+      letter-spacing: 0.27px;
+      text-align: center;
+      transform-style: preserve-3d;
+      perspective: 300px;
+    }
+    .trust-box {
+      background: #192132;
+      border-radius: 12px;
+      padding: 15px 12px 12px 12px;
+      margin-top: 18px;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #06b6d4;
+      box-shadow: 0 2px 12px #06b6d411, 0 1px 6px #67e8f922;
+      border: 1.1px solid #06b6d444;
+      transform-style: preserve-3d;
+      perspective: 350px;
+    }
+    .trust-badges img {
+      width: 37px;
+      margin: 7px;
+      filter: grayscale(0.10) brightness(1.12);
+      transition: transform 0.2s;
+      transform-style: preserve-3d;
+      perspective: 350px;
+    }
+    .trust-badges img:hover {
+      transform: scale(1.09) rotateY(-12deg);
+    }
+    .star-rating {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      color: #67e8f9;
+      margin-bottom: 10px;
+      justify-content: center;
+      gap: 8px;
+      text-shadow: 0 1px 5px #06b6d425;
+      filter: drop-shadow(0 3px 3px #f9fafb) drop-shadow(0 8px 8px #06b6d433);
+    }
+    .star-rating span {
+      color: #181f2f;
+      font-size: 15px;
+      margin-left: 12px;
+      font-weight: 600;
+      filter: drop-shadow(0 3px 2px #f9fafb) drop-shadow(0 8px 8px #06b6d466);
+    }
+    .contact-box {
+      margin-top: 52px;
+      padding-bottom: 12px;
+      transform-style: preserve-3d;
+      perspective: 350px;
+    }
+    .contact-box p, .contact-box a {
+      color: #06b6d4;
+      font-size: 16px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.08px;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+    @media (max-width: 510px) {
+      .header {font-size: 1.14rem; padding: 13px;}
+      .container {padding: 13px 6px;}
+      .zip-icon {width: 52px;}
+      .file-type {font-size: 1.07rem;}
+      .price-box {padding: 10px; font-size: 13px;}
+      .secure-note {font-size: 12px;}
+      .pay-button {font-size: 1rem; padding: 12px;}
+      .badge {font-size: 10px; padding: 6px 10px;}
+      .logo-bar img {width: 27px;}
+      .telegram-icon {width: 35px;}
+      .trust-box {font-size: 12px;}
+      .star-rating {font-size: 13px;}
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);}
+      50% { transform: scale(1.11);}
+    }
+    @keyframes bounceHover {
+      0% { transform: scale(1);}
+      50% { transform: scale(1.06);}
+      100% { transform: scale(1);}
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0;}
+      to { transform: scale(1); opacity: 1;}
+    }
+    @keyframes countdownBlink {
+      0%, 100% { opacity: 1;}
+      50% { opacity: 0.87;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="header" data-aos="fade-down">Your ready files</div>
+<div class="countdown" data-aos="fade-up">⏳ Offer ends in: <span class="timer">--:--:--</span></div>
+
+<div class="products-grid" data-aos="fade-up">
+  <div class="container" data-aos="fade-up">
+    <div class="badge">🔥 30% OFF</div>
+    <!-- SVG montage 3D file icon -->
+    <div style="display:flex; align-items:center; justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"
+        class="zip-icon" style="box-shadow: 0 16px 54px 0 #06b6d488, 0 0px 0px #fff; background:linear-gradient(135deg,#f9fafb 60%,#67e8f933 100%);">
+        <defs>
+          <linearGradient id="box1" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#06b6d4"/>
+            <stop offset="1" stop-color="#181f2f"/>
+          </linearGradient>
+          <linearGradient id="box2" x1="40" y1="20" x2="95" y2="95" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f9fafb"/>
+            <stop offset="1" stop-color="#67e8f9"/>
+          </linearGradient>
+          <linearGradient id="shine" x1="0" y1="0" x2="60" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#fff" stop-opacity=".5"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="shadow" x="0" y="65" width="110" height="30" filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feOffset dy="8"/>
+            <feFlood flood-color="#181f2f" flood-opacity="0.18"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in2="SourceGraphic" operator="over"/>
+          </filter>
+        </defs>
+        <!-- Shadow -->
+        <ellipse cx="55" cy="90" rx="34" ry="10" fill="#000" fill-opacity=".14" filter="url(#shadow)"/>
+        <!-- Main Box -->
+        <rect x="18" y="25" width="74" height="60" rx="14" fill="url(#box1)" stroke="#06b6d4" stroke-width="2"/>
+        <!-- Top Flap -->
+        <rect x="28" y="13" width="54" height="22" rx="7" fill="url(#box2)" stroke="#06b6d4" stroke-width="1.5"/>
+        <!-- Shine -->
+        <rect x="22" y="30" width="30" height="18" rx="6" fill="url(#shine)"/>
+        <!-- Montage stripes -->
+        <rect x="62" y="37" width="6" height="30" rx="3" fill="#fff" fill-opacity=".18"/>
+        <rect x="72" y="37" width="6" height="30" rx="3" fill="#fff" fill-opacity=".13"/>
+        <!-- File tab -->
+        <rect x="47" y="50" width="16" height="8" rx="2" fill="#fff" stroke="#f9fafb" stroke-width="1"/>
+        <rect x="47" y="60" width="16" height="5" rx="2" fill="#f9fafb"/>
+        <!-- Icon -->
+        <rect x="38" y="41" width="9" height="9" rx="3" fill="#06b6d4" stroke="#f9fafb" stroke-width="1"/>
+        <rect x="63" y="41" width="9" height="9" rx="3" fill="#06b6d4" stroke="#f9fafb" stroke-width="1"/>
+        <!-- Decorative lines -->
+        <rect x="40" y="55" width="30" height="2.5" rx="1.25" fill="#fff" fill-opacity="0.22"/>
+      </svg>
+    </div>
+    <div class="file-type">ZIP File (2 GB)</div>
+    <p style="margin-bottom: 7px;">Media: 1 file ready</p>
+    <div style="font-size: 15px; margin-bottom: 13px; color: #b4dff7;">
+      Includes: 150+ HD Videos, Audio Files, and Templates.
+    </div>
+    <a href="demo-preview.html" target="_blank" style="color:#67e8f9; font-size: 15px; text-decoration: underline dotted; font-weight:600;">🔍 Preview Sample</a>
+    <div class="price-box" data-aos="fade-right">
+      <div>Original: <strong style="text-decoration:line-through; color:gray;">$45.99</strong></div>
+      <div>Now: <strong>$31.89</strong></div>
+      <div class="secure-note">Secure payment & encrypted delivery</div>
+    </div>
+    <div class="star-rating" data-aos="fade-in">
+      <span>★★★★★</span> <span>4.9/5 (1,283 reviews)</span>
+    </div>
+    <button class="pay-button" onclick="handlePurchase()" data-aos="flip-left">🛡️ Get Instant Access</button>
+    <div style="margin-top: 12px; font-size: 14.5px; color: #06b6d4; font-weight: 600;">
+      ✅ 327 people bought this today
+    </div>
+    <div class="trust-box" data-aos="zoom-in">
+      <div>✅ 7-Day Money Back Guarantee</div>
+      <div>🔐 SSL Secured & Encrypted Checkout</div>
+      <div>📦 Instant Download Access After Payment</div>
+    </div>
+    <div class="trust-badges" data-aos="fade-up">
+      <img src="https://img.icons8.com/color/48/lock--v1.png" alt="Secure">
+      <img src="https://img.icons8.com/color/48/money--v1.png" alt="Refund">
+      <img src="https://img.icons8.com/color/48/approval--v1.png" alt="Verified">
+    </div>
+    <div class="logo-bar" data-aos="fade-up">
+      <img src="https://img.icons8.com/color/48/visa.png" loading="lazy" alt="Visa"/>
+      <img src="https://img.icons8.com/color/48/mastercard.png" loading="lazy" alt="MasterCard"/>
+      <img src="https://img.icons8.com/color/48/apple-pay.png" loading="lazy" alt="Apple Pay"/>
+      <img src="https://img.icons8.com/color/48/google-pay.png" loading="lazy" alt="Google Pay"/>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 43px; text-align: left; max-width: 470px; margin-inline: auto;" data-aos="fade-left">
+  <h3 style="font-size: 1.08rem; color: #06b6d4; font-weight: 700; letter-spacing:0.09px;">💬 What our customers said:</h3>
+  <blockquote style="background:#192132; padding: 13px 18px; border-left: 5px solid #06b6d4; font-size: 15px; border-radius: 10px; color: #f9fafb;">
+    "Amazing file, I received it instantly after payment. Highly recommended!"<br>
+    <strong>- Ahmed from Riyadh</strong>
+  </blockquote>
+</div>
+
+<div class="contact-box" data-aos="fade-up">
+  <a href="https://t.me/yncyl" target="_blank" title="Contact on Telegram">
+    <img src="https://img.icons8.com/color/48/telegram-app--v1.png" class="telegram-icon" alt="Telegram" />
+  </a>
+  <p>Support: <a href="mailto:ademnebti460@gmail.com">ademnebti460@gmail.com</a></p>
+</div>
+
+<div class="legal-box" data-aos="fade-up">
+  <p>©️ 2025 Media Vault. All rights reserved.</p>
+  <p>
+    <a href="privacy.html">Privacy Policy</a> • <a href="refund.html">Refund Policy</a>
+  </p>
+</div>
+
+<audio id="unlock-sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3" preload="auto"></audio>
+
+<script>
+  function getMidnightTimestamp() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0);
+    return midnight.getTime();
+  }
+  function startCountdown() {
+    const timers = document.querySelectorAll('.timer');
+    const targetTime = getMidnightTimestamp();
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = targetTime - now;
+      if (diff <= 0) {
+        clearInterval(interval);
+        timers.forEach(el => el.textContent = "00:00:00");
+        return;
+      }
+      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      timers.forEach(el => el.textContent = `${hours}:${minutes}:${seconds}`);
+    }, 1000);
+  }
+  function handlePurchase() {
+    const button = document.querySelector('.pay-button');
+    const stripeUrl = "https://ademo46.github.io/crypto-payment/";
+    document.getElementById('unlock-sound').play();
+    button.textContent = "Processing...";
+    button.disabled = true;
+    setTimeout(() => {
+      button.textContent = "✅ Access Granted";
+    }, 1500);
+    setTimeout(() => {
+      window.location.href = stripeUrl;
+    }, 2500);
+  }
+  startCountdown();
+  window.addEventListener('load', () => {
+    const button = document.querySelector('.pay-button');
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get("success");
+    if (button) {
+      button.disabled = false;
+      button.textContent = "🛡️ Get Instant Access";
+      if (success === "true") {
+        document.getElementById('unlock-sound').play();
+        button.textContent = "✅ Access Granted";
+        button.disabled = true;
+        setTimeout(() => {
+          window.location.href = "https://drive.google.com/uc?export=download&id=1KSURn3iRVrcQwYVIMoIObERqNUsyJdCx";
+        }, 3000);
+      }
+    }
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
