@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بوت التداول</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    select, button {
+      padding: 10px;
+      margin: 15px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background-color: #00c853;
+      color: white;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 بوت إشارات التداول</h1>
+
+  <label>اختر العملة الرقمية أو الفوركس:</label><br>
+  <select id="currency">
+    <option value="">-- اختر العملة --</option>
+    <option>BTC/USD</option>
+    <option>ETH/USD</option>
+    <option>XRP/USD</option>
+    <option>EUR/USD</option>
+    <option>USD/JPY</option>
+    <option>GBP/USD</option>
+    <option>AUD/USD</option>
+    <option>NZD/USD</option>
+    <option>USD/CAD</option>
+    <option>USD/CHF</option>
+  </select><br>
+
+  <label>اختر الفريم الزمني:</label><br>
+  <select id="timeframe">
+    <option value="">-- اختر الوقت --</option>
+    <option>5 ثواني</option>
+    <option>10 ثواني</option>
+    <option>30 ثانية</option>
+    <option>35 ثانية</option>
+    <option>5 دقائق</option>
+  </select><br>
+
+  <button onclick="getSignal()">عرض الإشارة 🔍</button>
+
+  <div id="result"></div>
+
+  <script>
+    function getSignal() {
+      const currency = document.getElementById('currency').value;
+      const time = document.getElementById('timeframe').value;
+      const resultDiv = document.getElementById('result');
+
+      if (!currency || !time) {
+        resultDiv.innerHTML = "⛔ الرجاء اختيار العملة و الوقت.";
+        resultDiv.style.color = "red";
+        return;
+      }
+
+      const signals = ["📈 شراء", "📉 بيع"];
+      const signal = signals[Math.floor(Math.random() * signals.length)];
+
+      resultDiv.innerHTML = `الإشارة لـ ${currency} على فريم ${time}: <br><br><span style="color: yellow">${signal}</span>`;
+      resultDiv.style.color = "white";
+    }
+  </script>
+
+</body>
+</html>
